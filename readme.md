@@ -30,6 +30,7 @@
 - 原始构建 [h2y](https://github.com/h2y)
 - StreamingCN.list 提取自 DivineEngine 规则
 - ad.list 规则来自 [o0HalfLife0o](https://github.com/o0HalfLife0o/list)
+- MIT 版规则来自  [blackmatrix7](https://github.com/blackmatrix7/ios_rule_script)
 - 以及其他来自贡献库的朋友们
 
 ## 使用方法
@@ -37,6 +38,17 @@
 在 ShadowRocket 应用中，进入 [配置] 页面，点击 `扫描[左上角]` 或 `添加[右上角]` 按钮添加规则。再激活添加的规则文件即可。
 
 最好让 ShadowRocket 断开并重新连接一次，以确保新的规则文件生效。 
+
+**MIT版特殊操作：**
+
+**注意，MIT版因为使用中间人攻击的方式，所以可以解密Https协议以更好的去除广告，但这也带来了一定的风险。**
+
+- 安装并信任证书
+  - 安装： 配置—＞点击你正在使用的配置（本地文件）—＞编辑配置—＞HTTPS解密，打开并按照提示生成并安装证书即可
+
+  - 信任： 前往手机的设置--＞通用--＞关于本机--＞证书信任设置--＞找到刚刚安装的证书，点绿它以信任该根证书--＞继续
+
+目前版本所用的规则均来自互联网，为了安全几乎去除了302、307、脚本参与处理的复写规则，通常情况下不会有安全风险。但是去除Youtube广告用到了重定向方法，介意的可以使用普通版或者在 ShadowRocket 中`编辑配置-脚本` 右划 删除 `RemoveADForYoutube`
 
 ### 回国规则
 
@@ -60,6 +72,18 @@ https://github.com/Wolfsin/SwitchProxy-Rules/raw/master/Shadowrocket_backcn.conf
 
 ```
 https://github.com/Wolfsin/SwitchProxy-Rules/raw/master/Shadowrocket_backcn_ad.conf
+```
+
+### 回国规则 + 广告过滤（MIT版）
+
+- 直连：国外网站
+- 代理：中国网站 + 国内常见流媒体
+- 包含更强的广告过滤
+- Youtube 广告过滤使用了高风险操作，因为脚本来自互联网无法审核安全性，介意的请使用普通版或者按照 `MIT版特殊操作` 一节自行移除该操作
+
+规则地址：
+```
+https://raw.githubusercontent.com/Wolfsin/SwitchProxy-Rules/master/Shadowrocket_backcn_ad_MIT.conf
 ```
 
 ## 问题反馈
