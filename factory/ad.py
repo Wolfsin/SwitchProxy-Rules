@@ -14,9 +14,11 @@ import re
 
 rules_url = [
     # EasyList China
-    #'https://easylist-downloads.adblockplus.org/easylistchina.txt',
+    # 'https://easylist-downloads.adblockplus.org/easylistchina.txt'
     # EasyList + China
-    'https://easylist-downloads.adblockplus.org/easylistchina+easylist.txt'
+    # 'https://easylist-downloads.adblockplus.org/easylistchina+easylist.txt'
+    # 合并自乘风视频广告过滤规则、EasylistChina、EasylistLite、CJX’sAnnoyance，以及补充的一些规则
+    'https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt'
 ]
 
 rule = ''
