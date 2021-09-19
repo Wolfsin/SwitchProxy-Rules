@@ -1,0 +1,10 @@
+# 国内外划分，对中国网站含流媒体代理，外国网站直连。
+# 不包含广告过滤
+
+DOMAIN-SUFFIX,cn,proxy
+
+GEOIP,CN,proxy
+
+{{StreamingCN}}
+
+FINAL,DIRECT
