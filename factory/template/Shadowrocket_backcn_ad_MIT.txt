@@ -1,0 +1,20 @@
+# 国内外划分，对中国网站含流媒体代理，外国网站直连。
+# 包含广告过滤
+# Reject
+RULE-SET, https://github.com/Wolfsin/SwitchProxy-Rules/raw/master/factory/resultant/Advertising.list,REJECT
+DOMAIN-SET, https://github.com/Wolfsin/SwitchProxy-Rules/raw/master/factory/resultant/Advertising_Domain.list,REJECT
+
+# Proxy
+RULE-SET, https://github.com/Wolfsin/SwitchProxy-Rules/raw/master/factory/resultant/China.list,proxy
+DOMAIN-SUFFIX,cn,proxy
+GEOIP,CN,proxy
+
+FINAL,DIRECT
+
+[Script]
+RemoveADForYouTube = type=http-request,pattern=^https?:\/\/.+?\.googlevideo\.com\/.+&(oad|ctier)=(?!A),script-path=https://github.com/Wolfsin/SwitchProxy-Rules/raw/master/factory/resultant/Script/YouTube.js,script-update-interval=0,enable = true
+
+
+[MITM]
+enable = true
+hostname = *.googlevideo.com,{{Mit_HostName}}
